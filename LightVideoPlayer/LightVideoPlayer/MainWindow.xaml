@@ -7,11 +7,14 @@
         mc:Ignorable="d"
         Title="Video Player" Height="350" Width="525" MinWidth="510" MinHeight="360" Background="#FF9F9F9F" Foreground="White">
     <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#99000000" Offset="1"/>
-                <GradientStop/>
-            </LinearGradientBrush>
-        </Grid.Background>
+        <MediaElement x:Name="mediaElement" Margin="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" LoadedBehavior="Manual"/>
+        <Grid Margin="0" Height="200" VerticalAlignment="Bottom">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#99000000" Offset="1"/>
+                    <GradientStop Offset="0.4"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
     </Grid>
 </Window>
