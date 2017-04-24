@@ -1,0 +1,17 @@
+﻿<Window x:Class="LightVideoPlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LightVideoPlayer"
+        mc:Ignorable="d"
+        Title="Video Player" Height="350" Width="525" MinWidth="510" MinHeight="360" Background="#FF9F9F9F" Foreground="White">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#99000000" Offset="1"/>
+                <GradientStop/>
+            </LinearGradientBrush>
+        </Grid.Background>
+    </Grid>
+</Window>
