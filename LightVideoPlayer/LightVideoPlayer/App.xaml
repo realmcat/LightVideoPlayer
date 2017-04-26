@@ -145,8 +145,17 @@
                     <TickBar x:Name="TopTick" Fill="{TemplateBinding Foreground}" Height="4" Margin="0,2.2,0,17.8" Placement="Top" Grid.Row="1" Visibility="Collapsed"/>
                     <TickBar x:Name="BottomTick" Fill="{TemplateBinding Foreground}" Height="4" Margin="0,6.2,0,-10.2" Placement="Bottom" Grid.Row="2" Visibility="Collapsed"/>
                     <Border x:Name="TrackBackground" BorderThickness="0" Background="#99E7EAEA" Height="3" Margin="0,14,0,15" Grid.Row="1" VerticalAlignment="center">
-                        <Canvas Margin="0,1,0.2,0.2" Height="2">
-                            <Rectangle x:Name="PART_SelectionRange" Fill="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Height="4.0" Visibility="Hidden"/>
+                        <Canvas Margin="-12,0,0,0" Height="3" Width="Auto">
+                            <Rectangle x:Name="PART_SelectionRange" Fill="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Height="3" RenderTransformOrigin="0.5,0.5" Width="13" HorizontalAlignment="Stretch" Canvas.Left="-1">
+                                <Rectangle.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="-1"/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
                         </Canvas>
                     </Border>
                     <Track x:Name="PART_Track" Grid.Row="1" Margin="0,3.2,0,-3.2" Grid.RowSpan="2">
@@ -157,7 +166,7 @@
                             <RepeatButton Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" Margin="0,-3,0.2,3.4" d:IsHidden="True"/>
                         </Track.IncreaseRepeatButton>
                         <Track.Thumb>
-                            <Thumb x:Name="Thumb" Focusable="False" Height="24" OverridesDefaultStyle="True" Template="{DynamicResource ThumbControlCircle}" VerticalAlignment="Center" Width="24" Margin="0,0,-0.2,7"/>
+                            <Thumb x:Name="Thumb" Focusable="False" Height="24" OverridesDefaultStyle="True" Template="{DynamicResource ThumbControlCircle}" VerticalAlignment="Center" Width="24" Margin="0,0,0,6" HorizontalAlignment="Stretch"/>
                         </Track.Thumb>
                     </Track>
                 </Grid>
@@ -306,8 +315,8 @@
             </Style.Triggers>
         </Style>
         <ControlTemplate x:Key="ThumbControlCircle" TargetType="{x:Type Thumb}">
-            <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
-                <Path x:Name="grip" Data="M5,5A10,10,0,1,0,5,5.1" Stretch="Fill" SnapsToDevicePixels="True" StrokeThickness="2" UseLayoutRounding="True" VerticalAlignment="Center" Stroke="#FF429CE3"/>
+            <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center" Height="24" Width="24">
+                <Path x:Name="grip" Data="M20.999994,10.949999 A10,10,0,1,0,20.999994,11.049999" Stretch="Fill" SnapsToDevicePixels="True" StrokeThickness="2" UseLayoutRounding="True" VerticalAlignment="Stretch" Stroke="#FF429CE3" Width="Auto" Height="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" StrokeStartLineCap="Flat" HorizontalAlignment="Stretch" StrokeEndLineCap="Square"/>
             </Grid>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="true">
